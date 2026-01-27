@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex | bydianeschultze.com</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/sprites/pikachu-favicon.png">
+</head>
+<body>
+    <header>
+        <h1>Diane's Pokedex</h1>
+        <p>Diane's Pokemon Collection</p>
+        <div id="topFilter">
+            <div>
+                <label for="filterGen">Generation</label>
+                <select id="filterGen">
+                    <option value="All">All</option>
+                    <option value="1">Gen 1</option>
+                    <option value="2">Gen 2</option>
+                </select>
+            </div>
+
+            <button id="resetBtn">Reset</button>
+        </div>
+        <div id="bottomFilter">
+            <h2>Types</h2>
+
+            <nav> <!-- using data-type for css -->
+                <button class="typeBtn" data-type="All">All</button>
+                <button class="typeBtn" data-type="Fire">Fire</button>
+                <button class="typeBtn" data-type="Water">Water</button>
+                <button class="typeBtn" data-type="Grass">Grass</button>
+                <button class="typeBtn" data-type="Electric">Electric</button>
+            </nav>
+        </div>
+    </header>
+            
+    
+        <main>
+            <h2>Pokemon List</h2>
+            <div id="pokemonGrid"></div>
+        </main>
+
+        <footer>
+            <small>All Pokemon data and sprites are sourced from 
+            <a href="https://pokemondb.net/sprites" target="_blank">Pokemon Database</a>. 
+            All code authored by <strong>Diane Schultze</strong>.
+            </small>
+        </footer>
+        
+    <script src="script.js"></script>
+</body>
+</html>

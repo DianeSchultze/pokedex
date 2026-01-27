@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Press+Start+2P&display=swap');
+
+/* tend to get confused with all the greens so using more distinct names */
+:root {
+  --darkgreen: #0d1a0d;
+  --alt-darkgreen: #122812;
+  --neon-green: #65ff65;
+  --text-color: #d8ffd8;
+  --muted-green: #8fbf8f;
+  --pale-lime: #9fff80;
+  --card-bg: #1b2f1b;
+  --border-green: #1e4020;
+  --deep-shadow: #071507;
+}
+
+/* Reset */
+* {box-sizing: border-box; margin: 0; padding: 0;}
+
+/* Typography */
+h1, h2, h3, span, select, button, label {
+  font-family: 'Press Start 2P', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif, cursive;
+}
+.typeBadge, p, figcaption, input,  small {font-family: 'Anonymous Pro', monospace, Courier, monospace;}
+
+h1, h2, h3 {
+  color: var(--text-color);
+  text-shadow:
+    0 0.125rem 0 var(--darkgreen),
+    0 0 0.75rem var(--muted-green);
+}
+select, button, label {font-size: 0.7rem; color: var(--text-color);
+}
+
+header p {font-size: 1rem; margin-top: 0.5rem; text-transform: uppercase; font-weight: 700;}
+
+/* I would usually clamp the heading but the font is difficult to read at smaller sizes */
+
+/* Base */
+body {
+  background-color: var(--darkgreen);
+  color: var(--text-color);
+  line-height: 1.45;
+  image-rendering: pixelated;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: linear-gradient(180deg, var(--alt-darkgreen) 0%, rgba(18,40,18,0.85) 65%, rgba(18,40,18,0.65) 100%); /* semi-transparent gradient */
+  border-bottom: 0.25rem solid var(--neon-green);
+  text-align: center;
+  padding: 1.8rem;
+  backdrop-filter: blur(4px);
+}
+
+#topFilter,
+#bottomFilter nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Controls */
+select, button {
+  transform: translateZ(0);
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 2px solid var(--muted-green);
+  box-shadow: 2px 2px 1px #000;
+  background-color: #235523;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+button:hover,
+select:hover {
+  background-color: #193a19;
+  box-shadow: 4px 4px 1px #000;
+}
+
+.typeBtn {text-transform: uppercase;}   
+
+.typeBtn.active {
+  outline: 3px solid var(--pale-lime);
+  text-shadow: 0 0 10px #071507;
+}
+
+/* Main */
+main {
+  padding: 1.8rem; 
+}
+main h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#pokemonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); 
+  gap: 1.8rem;
+}
+
+article {
+  max-width: 25rem;
+  border: 2px solid var(--muted-green);
+  padding: 1.8rem;
+  background-color: var(--card-bg);
+  margin: 0 auto;
+  box-shadow:
+    0 0 0 4px var(--border-green) inset,
+    0 8px 0 0 var(--deep-shadow),
+    0 12px 0 0 rgba(0,0,0,0.25);
+}
+
+/* img */
+figure img {
+  display: block;
+  min-height: 150px;
+  margin: 0 auto;
+  filter: drop-shadow(0 6px 0 rgba(0,0,0,0.6)); /* shadow below image */
+
+}
+
+figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+figcaption h3,
+figcaption span {
+  font-size: 0.8rem;
+}
+
+/* type Badges */
+.typeBadge {
+  font-size: 0.8rem;
+  color: var(--darkgreen);
+  text-transform: uppercase;
+  font-weight: 700;
+  max-width: fit-content;
+  padding: 0.2rem 0.5rem;
+  border: 2px solid var(--border-green);
+}
+
+/* specific type colors */
+.typeBadge[data-type="Fire"]    { background: #ff8585; }
+.typeBadge[data-type="Water"]   { background: #8ec8ff; }
+.typeBadge[data-type="Grass"]   { background: #95ff95; }
+.typeBadge[data-type="Electric"]{ background: #fffd93; }
+
+/* footer */
+footer {
+  width: 100%;
+  background-color: var(--alt-darkgreen);
+  border-top: 4px solid var(--muted-green);
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
+a {
+  color: var(--neon-green);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* CRT grid overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background:
+    linear-gradient(90deg, rgba(101,255,101,0.05) 1px, transparent 1px) 0 0/3px 100%,
+    linear-gradient(180deg, rgba(101,255,101,0.03) 1px, transparent 1px) 0 0/100% 3px;
+}
+
+/* focus */
+:focus {
+  outline: 3px dashed var(--pale-lime);
+  outline-offset: 0.125rem;
+}
