@@ -144,6 +144,7 @@ const pokemons = [
         alt: "Wooper sprite from Pokemon Black and White",
         desc: "Wooper is a small, blue, amphibious Pokemon with a cheerful disposition."
     },
+
     {
         dex: "131",
         name: "Lapras",
@@ -152,7 +153,10 @@ const pokemons = [
         img: "assets/sprites/lapras.png",
         alt: "Lapras sprite from Pokemon Black and White",
         desc: "Lapras is a large, plesiosaur-like Pokemon known for its gentle nature and ability to ferry people across bodies of water."
-    }
+    },
+
+
+
 ];
 
 // Sort pokemons by pokedex number automatically
