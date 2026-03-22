@@ -253,7 +253,7 @@ function openModal(pokemon) {
   modalBody.innerHTML = `
     <div class="modalTop">
       <div class="modalImageWrap">
-        <img src="${pokemon.img}" alt="${pokemon.name}">
+        <img src="${pokemon.img}" alt="${pokemon.name}" loading="lazy">
       </div>
 
       <div class="modalInfo">
