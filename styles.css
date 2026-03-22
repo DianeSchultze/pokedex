@@ -308,6 +308,7 @@ input:focus {
   font-size: 1.4rem;
   line-height: 1;
   display: block;
+  z-index: 2;
 }
 
 .modalTop {

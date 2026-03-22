@@ -12,6 +12,10 @@ const closeModalBtn = document.querySelector("#closeModalBtn");
 
 const clickSound = new Audio("assets/sounds/button-click.mp3");
 
+modalBody.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
 function playClickSound() {
   clickSound.pause();
   clickSound.currentTime = 0;
@@ -314,6 +318,7 @@ function openModal(pokemon) {
       </div>
     </div>
   `;
+  
 
   pokemonModal.classList.remove("hidden");
   pokemonModal.setAttribute("aria-hidden", "false");
