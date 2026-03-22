@@ -323,12 +323,15 @@ function openModal(pokemon) {
   pokemonModal.classList.remove("hidden");
   pokemonModal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
+  document.documentElement.style.overflow = "hidden";
+
 }
 
 function closeModal() {
   pokemonModal.classList.add("hidden");
   pokemonModal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
+  document.documentElement.style.overflow = "";
 }
 
 filterGen.addEventListener("change", (event) => {
